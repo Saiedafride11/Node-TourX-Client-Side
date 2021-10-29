@@ -1,0 +1,11 @@
+.popular-tour-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* @media only screen and (min-width: 992px) and (max-width:1200px) {
+    .doctors-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+} */
