@@ -11,40 +11,48 @@ import TourDetails from './pages/Home/TourDetails/TourDetails';
 import NewsDetails from './pages/Home/NewsDetails/NewsDetails';
 import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
+import Login from './pages/Login/Login/Login';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header></Header>
-        <Switch>
-            <Route exact path="/">        
-              <Home></Home>
-            </Route>
-            <Route path="/home">        
-              <Home></Home>
-            </Route>
-            <Route path="/tours">        
-              <Tours></Tours>
-            </Route>
-            <Route path="/tour/:tourId">        
-              <TourDetails></TourDetails>
-            </Route>
-            <Route path="/news">        
-              <NewsDetails></NewsDetails>
-            </Route>
-            <Route path="/contact">        
-              <Contact></Contact>
-            </Route>
-            <Route path="/about">        
-              <About></About>
-            </Route>
-            <Route path="*">        
-              <NotFound></NotFound>
-            </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+              <Route exact path="/">        
+                <Home></Home>
+              </Route>
+              <Route path="/home">        
+                <Home></Home>
+              </Route>
+              <Route path="/tours">        
+                <Tours></Tours>
+              </Route>
+              <PrivateRoute path="/tour/:tourId">        
+                <TourDetails></TourDetails>
+              </PrivateRoute>
+              <Route path="/news">        
+                <NewsDetails></NewsDetails>
+              </Route>
+              <Route path="/contact">        
+                <Contact></Contact>
+              </Route>
+              <Route path="/about">        
+                <About></About>
+              </Route>
+              <Route path="/login">        
+                <Login></Login>
+              </Route>
+              <Route path="*">        
+                <NotFound></NotFound>
+              </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
