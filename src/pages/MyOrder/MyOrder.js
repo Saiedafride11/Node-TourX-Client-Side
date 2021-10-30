@@ -1,22 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
+import useOrder from '../../hooks/useOrder';
 
 const MyOrder = () => {
-    const [orders, setOrders] = useState([]);
+    const [orders, setOrders] = useOrder();
     const {user} = useAuth();
     const [myOrders, setMyOrders] = useState();
-
-    useEffect( () => {
-        fetch('http://localhost:5000/orders')
-        .then(res => res.json())
-        .then(data => setOrders(data))
-    }, [])
 
     useEffect(() => {
         const tour = orders?.filter(order => order.email === user.email);
         setMyOrders(tour)
-        console.log(tour)
       }, [orders]);
 
     const handleDeleteOrder = id => {
@@ -43,7 +37,7 @@ const MyOrder = () => {
                     myOrders?.length === 0 ?
                     <h2 style={{color: '#ff7f47'}}>Loading...</h2>
                     :
-                    <Table  bordered hover responsive="sm">
+                    <Table hover responsive="sm" style={{border: '1px solid #ff7f47'}}>
                         <thead>
                             <tr>
                                 <th>SL.</th>

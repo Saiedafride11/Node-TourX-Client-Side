@@ -7,7 +7,7 @@ import './PopularTours.css';
 const PopularTours = () => {
     const [tours] = useData();
     return (
-        <div className="py-5">
+        <div className="popular-tour py-5">
             <div className="container">
                 <h2 className="pb-3 text-center" style={{color: '#ff7f47'}}>Most Popular Tours</h2>
                 <div className="popular-tour-container">

@@ -17,6 +17,7 @@ const TourDetails = () => {
    
     return (
         <div className="py-5">
+            <h2 className="pb-3 text-center" style={{color: '#ff7f47'}}>Booking Your Favorite Place</h2>
             <div className="container">
                 {   
                         carts?.length === 0 ?

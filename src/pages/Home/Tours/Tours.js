@@ -7,7 +7,7 @@ import './Tours.css';
 const Tours = () => {
     const [tours] = useData();
     return (
-        <div className="py-5">
+        <div className="tour py-5">
             <div className="container">
                 <h2 className="pb-3 text-center" style={{color: '#ff7f47'}}>Total Tourist Place Available: <strong style={{color: '#2c3e50'}}>{tours.length}</strong></h2>
                 <div className="tours-container">

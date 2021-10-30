@@ -7,7 +7,6 @@ import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const {user, logOut} = useAuth();
-    console.log(user)
     return (
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" className="header-container">
@@ -33,26 +32,23 @@ const Header = () => {
                                     ''
                                 }
                             </Navbar.Text>
-                            
                             {
                                 user?.displayName ?
-                                <NavDropdown title={user?.displayName} id="navbarScrollingDropdown">
-                                    <NavDropdown.Item href="/">
+                                    <NavDropdown title={user?.displayName} id="navbarScrollingDropdown">
                                         <div className="user-img">
                                             <img src={user?.photoURL} className="w-100 rounded-circle" alt="User" />
                                         </div>
                                         {   
                                             user?.displayName ?
-                                                <>
+                                                <div>
                                                     <Nav.Link as={Link} to="/orders">My Orders</Nav.Link>
                                                     <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
                                                     <Nav.Link as={Link} to="/addservices">Add Service</Nav.Link>
-                                                </>
+                                                </div>
                                             :
                                             ''
                                         }
-                                    </NavDropdown.Item>
-                                </NavDropdown>
+                                    </NavDropdown>
                                 :
                                 ''
                             }

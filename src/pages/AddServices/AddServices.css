@@ -12,10 +12,8 @@
     outline: none;
     margin-bottom: 15px;
 }
-.add-services input:active{
-    border: 1px solid #ff7f47;
-}
-.add-services input:hover{
+
+.add-services input:hover, .add-services input:active{
     border: 1px solid #ff7f47;
     transition: 1s;
 }

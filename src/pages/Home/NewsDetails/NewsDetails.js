@@ -1,22 +1,31 @@
 import React from 'react';
 
+
 const NewsDetails = () => {
     return (
         <div className="container py-5">
-            <h3>Stuttering in children: How parents can help</h3>
-            <p>Stuttering in children is fairly common: as many as 10% of children stutter between the ages of 2 and 6. Although the majority of them stop, it can be distressing for both the children and their parents. Here's how to help your child manage stuttering and when to talk to your pediatrician or a speech-language specialist.</p>
+            <h3>Dan Flying Solo</h3>
+            <p>Daniel is a British bloke who works with Skyscanner and LonelyPlanet on the regular. He’s an amazing writer with tons of useful tips, and is an even better photographer. I had the privilege of traveling with Daniel and working with him in India. There was never a dull moment! His photography has also been published in Beautiful Destination, Travel & Leisure, National Geographic, Travel Channel and Matador Network.</p>
             <br />
-            <h3>Icy fingers and toes: Poor circulation or Raynaud’s phenomenon?</h3>
-            <p>Some people have poor circulation, but if your fingers pale and go numb when exposed to quick changes in temperature, it could be Raynaud’s phenomenon, a different kind of circulation problem. Generally, avoiding sudden exposure to cold and other factors that cause blood vessels to constrict, and being prepared with gloves and extra layers of clothing, helps.</p>
+            <h3>A Broken Backpack</h3>
+            <p>Melissa is a Canadian doll. She has no filter and is such a warm hearted individual. YOU MUST catch her on Snapchat or Youtube. She's either hitchhiking though SE Asia or sharing her travel shenanigans.She’s such a talented individual and has truly proven that hard work pays off. Melissa has been published on Huffington Post, Matador Network, Thought Catalog and much, much more. She’s a true female backpacker and an inspiration!</p>
             <br />
-            <h3>Evoking calm: Practicing mindfulness in daily life helps</h3>
-            <p>It’s easy to feel too busy to be mindful, but everyone can find a few minutes during the day to pause and reflect. Even a brief, regular mindfulness practice provides a respite from the pace and stress of life, and can help with memory, concentration, and focus.</p>
+            <h3>The Blog Abroad</h3>
+            <p>Gloria (aka glo) is an Arizona native and is the realest of the realest! Never afraid to voice her an opinion, she is a talented writer who creates great content. She also has a great eye for photography. She's worked with top travel photographers and writes for Huffington Post, Thought Catalog, and Matador Networks.  She’s also one of the BEST selfie-takers I know. </p>
             <br />
-            <h3>Finding balance: 3 simple exercises to steady your steps</h3>
-            <p>Being able to maintain balance is crucial to performing everyday activities. As people get older, systems in the body that help maintain balance aren’t as responsive as when they were younger. Practicing these exercises designed to improve balance helps build steadiness and prevent falls.</p>
+            <h3>Lili’s Travel Plans</h3>
+            <p>Lili is a Belgian chick who is another kick ass travel blogger! She was recently named #25 Top Travel Blogger To Follow In 2016. Lili also has no filter and does a wonderful job at sharing her opinion about travel. She's also a fellow Travello App travel blogger.</p>
             <br />
-            <h3>Boosting your child’s immune system</h3>
-            <p>As children go through another school year under the cloud of the COVID-19 pandemic, parents are asking what they can do to keep their children healthy. While no magic solutions can ward off every illness, parents can take steps to help children — and everyone in their household — protect their health by keeping their immune systems robust.</p>
+            <h3>My Life’s A Movie</h3>
+            <p>Alyssa Ramos is a Cuban American (like me!) Florida native. She’s a GoPro selfie ninja master! Seriously tho, she even published ‘10 Tips For Getting Travel Photos With No People In Them’. She’s just that GOOD! Alyssa is also part of the GoPro family and writes for Huffington Post, Matador Network and other media publications. Catch her on Snapchat as she's always sharing quick travel tips for packing.</p>
+            <br />
+            <h3>Drew Binksy</h3>
+            <p>Drew is another Arizona native. Drew has been traveling the world since he left college and has made a full-time career working for himself. He's known as the Snapchat genius. He's created his own travel show through Snapchat. He works with several different brands and sponsors, is part of the GoPro Family, and writes for Elite Daily as well as the Huffington Post.</p>
+            <br />
+            <h3>The Blonde Abroad</h3>
+            <p>Keirsten is a California native who quit a career in finance to travel the world. She’s been traveling for 5 years and is ‘killing it’. This girl has some amazing girl power! She works with top brands and sponsors from all over the globe. Keirsten is also a good writer, content creator, and extremely talented in photography. She is also part of the GoPro Family and has been featured on Huffington Post, Forbes, Matador Network, and many more! I have yet to meet this beauty but she's on my list! Such an inspiration.</p>
+            <br />
+            
         </div>
     );
 };

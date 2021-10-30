@@ -1,14 +1,30 @@
+.banner{
+    width: 100%;
+    position: relative;
+}
+.banner::before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(#ff7f47, #ff7f47);
+	opacity: .50;
+	top: 0;
+	left: 0;
+    z-index: 1;
+}
 .banner img{
     width: 100%;
-    height: 100vh;
 }
 .banner h1{
     font-size:80px;
     line-height: 90px;
+    z-index: 90!important;
 }
 .banner h3{
     font-size:30px;
     color: #ff7f47;
+    z-index: 90 !important;
 }
 .carousel-caption{
     width: 100% !important;
@@ -18,6 +34,9 @@
 }
 .carousel-indicators{
     top: 90% !important;
+}
+.banner-btn{
+    z-index: 90;
 }
 a.btn-common {
     display: inline-block;
@@ -49,4 +68,20 @@ a.btn-common:before {
 a.btn-common:hover:before {
     -webkit-clip-path: circle(100%) !important;
     clip-path: circle(100%) !important;
+}
+
+@media only screen and (min-width: 767px) and (max-width:1040px) {
+    .popular-tour-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (min-width: 280px) and (max-width:767px) {
+    .banner h1{
+        font-size:30px;
+        line-height: 40px;
+    }
+    .banner h3{
+        font-size:22px;
+    }
 }

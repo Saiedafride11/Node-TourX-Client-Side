@@ -9,7 +9,7 @@ const useData = () => {
         .then(data => {
             setTours(data)
         })
-    })
+    }, [])
     return [tours]
 };
 

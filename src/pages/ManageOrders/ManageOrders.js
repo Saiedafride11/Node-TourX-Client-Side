@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Table } from 'react-bootstrap';
+import useOrder from '../../hooks/useOrder';
 
 const ManageOrders = () => {
-    const [orders, setOrders] = useState([]);
+    const [orders, setOrders] = useOrder();
     
-    useEffect( () => {
-        fetch('http://localhost:5000/orders')
-        .then(res => res.json())
-        .then(data => setOrders(data))
-    }, [])
-
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?')
         if(proceed){
@@ -36,7 +31,7 @@ const ManageOrders = () => {
                     orders?.length === 0 ?
                     <h2 style={{color: '#ff7f47'}}>Loading...</h2>
                     :
-                    <Table  bordered hover responsive="sm">
+                    <Table  hover responsive="sm" style={{border: '1px solid #ff7f47'}}>
                         <thead>
                             <tr>
                                 <th>SL.</th>
