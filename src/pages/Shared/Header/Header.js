@@ -18,16 +18,15 @@ const Header = () => {
                             <Nav.Link as={Link} to="/tours">Tours</Nav.Link>
                             {   
                                  user?.displayName ?
-                                    <Nav.Link as={Link} to="/orders">My Orders</Nav.Link>
+                                    <>
+                                        <Nav.Link as={Link} to="/orders">My Orders</Nav.Link>
+                                        <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
+                                        <Nav.Link as={Link} to="/addservices">Add Service</Nav.Link>
+                                    </>
                                 :
                                 ''
                             }
-                            {   
-                                 user?.displayName ?
-                                    <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
-                                :
-                                ''
-                            }
+                            
                             <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             {   

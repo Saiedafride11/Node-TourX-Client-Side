@@ -14,8 +14,9 @@ import About from './pages/About/About';
 import Login from './pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
-import MyOrder from './pages/Home/MyOrder/MyOrder';
-import ManageOrders from './pages/Home/ManageOrders/ManageOrders';
+import MyOrder from './pages/MyOrder/MyOrder';
+import ManageOrders from './pages/ManageOrders/ManageOrders';
+import AddServices from './pages/AddServices/AddServices';
 
 function App() {
   return (
@@ -39,11 +40,14 @@ function App() {
               <Route path="/news">        
                 <NewsDetails></NewsDetails>
               </Route>
+              <PrivateRoute path="/manageorders">        
+                <ManageOrders></ManageOrders>
+              </PrivateRoute>
               <PrivateRoute path="/orders">        
                 <MyOrder></MyOrder>
               </PrivateRoute>
-              <PrivateRoute path="/manageorders">        
-                <ManageOrders></ManageOrders>
+              <PrivateRoute path="/addservices">        
+                <AddServices></AddServices>
               </PrivateRoute>
               <Route path="/contact">        
                 <Contact></Contact>

@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import useAuth from '../../hooks/useAuth';
 
-const ManageOrders = () => {
+const MyOrder = () => {
     const [orders, setOrders] = useState([]);
-    const [pending, setPending] = useState(false);
+    const {user} = useAuth();
+    const [myOrders, setMyOrders] = useState();
+
     useEffect( () => {
         fetch('http://localhost:5000/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [])
+
+    useEffect(() => {
+        const tour = orders?.filter(order => order.email === user.email);
+        setMyOrders(tour)
+        console.log(tour)
+      }, [orders]);
 
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?')
@@ -27,15 +36,11 @@ const ManageOrders = () => {
             })
             }
     }
-
-    const handlePendingOrder = () => {
-        setPending(!pending);
-    }
     return (
         <div className="container py-5">
             <div className="mx-auto">
                 {
-                    orders?.length === 0 ?
+                    myOrders?.length === 0 ?
                     <h2 style={{color: '#ff7f47'}}>Loading...</h2>
                     :
                     <Table  bordered hover responsive="sm">
@@ -46,21 +51,17 @@ const ManageOrders = () => {
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Date</th>
-                                <th>Status</th>
                                 <th>Delete Order</th>
                             </tr>
                         </thead>
                         {
-                            orders?.map((order, i) => <tbody key={order._id}>
+                            myOrders?.map((order, i) => <tbody key={order._id}>
                                 <tr>
                                     <td>{i}</td>
                                     <td>{order.title}</td>
                                     <td style={{textTransform: 'capitalize'}}>{order.name}</td>
                                     <td>{order.email}</td>
                                     <td>{order.date}</td>
-                                    <td style={{color: '#ff7f47'}}>
-                                        <button onClick={handlePendingOrder} className="btn text-white" style={{backgroundColor: '#ff7f47'}}>{pending ? 'Accepted' : 'Pending'}</button>
-                                    </td>
                                     <td>
                                         <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}>Cancel</button>
                                     </td>
@@ -74,4 +75,4 @@ const ManageOrders = () => {
     );
 };
 
-export default ManageOrders;
+export default MyOrder;

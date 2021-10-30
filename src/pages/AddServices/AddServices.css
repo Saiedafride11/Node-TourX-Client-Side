@@ -1,0 +1,25 @@
+.add-services{
+    width: 100%;
+}
+.add-services input{
+    width: 75%;
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #ff7f47;
+    padding:6px 8px;
+    font-size:14px;
+    outline: none;
+    margin-bottom: 15px;
+}
+.add-services input:active{
+    border: 1px solid #ff7f47;
+}
+.add-services input:hover{
+    border: 1px solid #ff7f47;
+    transition: 1s;
+}
+
+.add-services::placeholder {
+    color: #a5a5a5;
+  }
