@@ -23,13 +23,13 @@ const AddServices = () => {
                 <h2 className="py-3 text-center" style={{color: '#ff7f47'}}>Add Services</h2>
             <div className="add-services">
                     <form onSubmit={handleSubmit(onSubmit)} className="text-center">
-                        <input Placeholder="Please Type Title" {...register("title")} required/>
-                        <input Placeholder="Please Type Price" {...register("price")} required/>
-                        <input Placeholder="Please Type Ratting" {...register("ratting")} required/>
-                        <input Placeholder="Please Type Day" {...register("day")} required/>
-                        <input Placeholder="Please Type Person" {...register("person")} required/>
-                        <input Placeholder="Please Type Location" {...register("location")} required/>
-                        <input Placeholder="Please Type Image Link" {...register("img")} required/>
+                        <input placeholder="Please Type Title" {...register("title")} required/>
+                        <input placeholder="Please Type Price" {...register("price")} required/>
+                        <input placeholder="Please Type Ratting" {...register("ratting")} required/>
+                        <input placeholder="Please Type Day" {...register("day")} required/>
+                        <input placeholder="Please Type Person" {...register("person")} required/>
+                        <input placeholder="Please Type Location" {...register("location")} required/>
+                        <input placeholder="Please Type Image Link" {...register("img")} required/>
                         <input type="submit" className="btn w-75 text-white"  style={{backgroundColor: '#ff7f47'}}/>
                     </form>
                 </div>

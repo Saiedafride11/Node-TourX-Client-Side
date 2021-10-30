@@ -1,12 +1,13 @@
 import React from 'react';
 import './Header.css';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const {user, logOut} = useAuth();
+    console.log(user)
     return (
             <>
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top" className="header-container">
@@ -16,17 +17,6 @@ const Header = () => {
                         <Navbar.Collapse className="justify-content-end">
                             <Nav.Link as={HashLink} to="/home#home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/tours">Tours</Nav.Link>
-                            {   
-                                 user?.displayName ?
-                                    <>
-                                        <Nav.Link as={Link} to="/orders">My Orders</Nav.Link>
-                                        <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
-                                        <Nav.Link as={Link} to="/addservices">Add Service</Nav.Link>
-                                    </>
-                                :
-                                ''
-                            }
-                            
                             <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             {   
@@ -42,8 +32,30 @@ const Header = () => {
                                     :
                                     ''
                                 }
-                                <span className="text-white">{user?.displayName}</span>
                             </Navbar.Text>
+                            
+                            {
+                                user?.displayName ?
+                                <NavDropdown title={user?.displayName} id="navbarScrollingDropdown">
+                                    <NavDropdown.Item href="/">
+                                        <div className="user-img">
+                                            <img src={user?.photoURL} className="w-100 rounded-circle" alt="User" />
+                                        </div>
+                                        {   
+                                            user?.displayName ?
+                                                <>
+                                                    <Nav.Link as={Link} to="/orders">My Orders</Nav.Link>
+                                                    <Nav.Link as={Link} to="/manageorders">Manage All Orders</Nav.Link>
+                                                    <Nav.Link as={Link} to="/addservices">Add Service</Nav.Link>
+                                                </>
+                                            :
+                                            ''
+                                        }
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                                :
+                                ''
+                            }
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
