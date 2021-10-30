@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const useData = () => {
     const [tours, setTours] = useState([]);
     useEffect(() => {
-        fetch('/tour.json')
+        fetch('http://localhost:5000/tours')
         .then(res => res.json())
         .then(data => {
             setTours(data)

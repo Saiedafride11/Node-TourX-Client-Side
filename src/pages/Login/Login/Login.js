@@ -2,9 +2,6 @@ import React from 'react';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGoogle} from '@fortawesome/free-brands-svg-icons'
-
 const Login = () => {
     const {user, SignInUsingGoogle} = useAuth();
 
@@ -21,7 +18,10 @@ const Login = () => {
     return (
         <div className="container">
             <div className="text-center">
-                <button onClick={handleGoogleLogin} className="btn w-25 text-white"  style={{backgroundColor: '#ff7f47'}}><FontAwesomeIcon icon={faGoogle} /> Login</button>
+                <h3 className="pb-3" style={{color: '#ff7f47'}}>Please Login</h3>
+                <button onClick={handleGoogleLogin} className="btn w-25" style={{color: '#ff7f47', border: '2px solid #ff7f47'}}> 
+                    <img src="https://i.ibb.co/qN9z9Fy/google-logo.png" alt="" className="w-25" /> Log in with Google
+                </button>
             </div>
         </div>
     );

@@ -14,6 +14,8 @@ import About from './pages/About/About';
 import Login from './pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import MyOrder from './pages/Home/MyOrder/MyOrder';
+import ManageOrders from './pages/Home/ManageOrders/ManageOrders';
 
 function App() {
   return (
@@ -36,6 +38,12 @@ function App() {
               </PrivateRoute>
               <Route path="/news">        
                 <NewsDetails></NewsDetails>
+              </Route>
+              <Route path="/orders">        
+                <MyOrder></MyOrder>
+              </Route>
+              <Route path="/manageorders">        
+                <ManageOrders></ManageOrders>
               </Route>
               <Route path="/contact">        
                 <Contact></Contact>

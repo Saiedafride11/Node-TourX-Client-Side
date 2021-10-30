@@ -1,0 +1,20 @@
+.confirm-order input, .confirm-order select, .confirm-order textarea{
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #a5a5a5;
+    padding:6px 8px;
+    font-size:14px;
+    outline: none;
+}
+.confirm-order input:active, .confirm-order select:active, .confirm-order textarea:active{
+    border: 1px solid #ff7f47;
+}
+.confirm-order input:hover, .confirm-order select:hover, .confirm-order textarea:hover{
+    border: 1px solid #ff7f47;
+    transition: 1s;
+}
+
+.confirm-order ::placeholder {
+    color: #a5a5a5;
+  }
