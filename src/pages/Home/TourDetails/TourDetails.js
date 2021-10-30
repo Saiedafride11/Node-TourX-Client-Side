@@ -8,6 +8,7 @@ const TourDetails = () => {
     const {tourId} = useParams();
     const [tours] = useData();
     const [carts, setCart] = useState();
+    document.title = 'Booing Order';
 
     useEffect(() => {
         const tour = tours?.filter((tour) => tour._id === tourId);

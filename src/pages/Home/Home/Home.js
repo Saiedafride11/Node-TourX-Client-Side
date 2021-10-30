@@ -5,6 +5,7 @@ import Newsletter from '../Newsletter/Newsletter';
 import PopularTours from '../PopularTours/PopularTours';
 
 const Home = () => {
+    document.title = 'TourX Home Page';
     return (
         <div>
             <Banner></Banner>

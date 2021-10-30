@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const NewsDetails = () => {
+    document.title = 'News & Blog';
     return (
         <div className="container py-5">
             <h3>Dan Flying Solo</h3>

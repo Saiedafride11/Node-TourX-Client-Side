@@ -6,6 +6,7 @@ import './Tours.css';
 
 const Tours = () => {
     const [tours] = useData();
+    document.title = 'Tourist Place';
     return (
         <div className="tour py-5">
             <div className="container">

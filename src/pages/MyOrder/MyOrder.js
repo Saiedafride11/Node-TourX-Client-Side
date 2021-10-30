@@ -7,6 +7,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useOrder();
     const {user} = useAuth();
     const [myOrders, setMyOrders] = useState();
+    document.title = 'My Order';
 
     useEffect(() => {
         const tour = orders?.filter(order => order.email === user.email);
@@ -16,7 +17,7 @@ const MyOrder = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?')
         if(proceed){
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://cryptic-mountain-31100.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

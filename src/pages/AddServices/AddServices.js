@@ -4,8 +4,10 @@ import './AddServices.css'
 
 const AddServices = () => {
     const { register, handleSubmit, reset } = useForm();
+    document.title = 'Add Service';
+
     const onSubmit = data => {
-        fetch('http://localhost:5000/tours', {
+        fetch('https://cryptic-mountain-31100.herokuapp.com/tours', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
             body: JSON.stringify(data)

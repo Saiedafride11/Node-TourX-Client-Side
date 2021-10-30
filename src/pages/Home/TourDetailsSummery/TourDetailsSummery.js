@@ -10,7 +10,7 @@ const TourDetailsSummery = (props) => {
     const {img, title, price, person, day, ratting, location} = props.tour;
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://cryptic-mountain-31100.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
             body: JSON.stringify(data)

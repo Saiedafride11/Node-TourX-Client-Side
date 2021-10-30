@@ -2,6 +2,7 @@ import React from 'react';
 import './Contact.css';
 
 const Contact = () => {
+    document.title = 'Contact Us';
     return (
             <div className="contact py-5">
                 <div className="container">

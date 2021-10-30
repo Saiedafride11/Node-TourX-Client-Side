@@ -1,6 +1,7 @@
 import React from 'react';
 
 const NotFound = () => {
+    document.title = '404 Error';
     return (
         <div className="container">
             <div className="d-flex justify-content-center align-items-center">
