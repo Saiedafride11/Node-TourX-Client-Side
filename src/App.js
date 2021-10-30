@@ -39,12 +39,12 @@ function App() {
               <Route path="/news">        
                 <NewsDetails></NewsDetails>
               </Route>
-              <Route path="/orders">        
+              <PrivateRoute path="/orders">        
                 <MyOrder></MyOrder>
-              </Route>
-              <Route path="/manageorders">        
+              </PrivateRoute>
+              <PrivateRoute path="/manageorders">        
                 <ManageOrders></ManageOrders>
-              </Route>
+              </PrivateRoute>
               <Route path="/contact">        
                 <Contact></Contact>
               </Route>

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 
 const ManageOrders = () => {
-    const [orders, setOrders] = useState([])
+    const [orders, setOrders] = useState([]);
+    const [pending, setPending] = useState(false);
     useEffect( () => {
         fetch('http://localhost:5000/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
-    })
+    }, [])
 
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?')
@@ -26,6 +27,10 @@ const ManageOrders = () => {
             })
             }
     }
+
+    const handlePendingOrder = () => {
+        setPending(!pending);
+    }
     return (
         <div className="container py-5">
             <div className="mx-auto">
@@ -42,7 +47,7 @@ const ManageOrders = () => {
                                 <th>Email</th>
                                 <th>Date</th>
                                 <th>Status</th>
-                                <th>Delete Item</th>
+                                <th>Delete Order</th>
                             </tr>
                         </thead>
                         {
@@ -53,7 +58,9 @@ const ManageOrders = () => {
                                     <td style={{textTransform: 'capitalize'}}>{order.name}</td>
                                     <td>{order.email}</td>
                                     <td>{order.date}</td>
-                                    <td style={{color: '#ff7f47'}}>Pending</td>
+                                    <td style={{color: '#ff7f47'}}>
+                                        <button onClick={handlePendingOrder} className="btn text-white" style={{backgroundColor: '#ff7f47'}}>{pending ? 'Accepted' : 'Pending'}</button>
+                                    </td>
                                     <td>
                                         <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}>Cancel</button>
                                     </td>
