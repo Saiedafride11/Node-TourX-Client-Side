@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import './AddServices.css'
+import './AddServices.css';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 const AddServices = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -15,7 +16,13 @@ const AddServices = () => {
         .then(res => res.json())
         .then(result => {
             if(result.insertedId){
-                alert('Data Successfully Added');
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Data Successfully Added',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
                 reset();
             }
         })

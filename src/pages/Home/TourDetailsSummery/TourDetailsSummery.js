@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faCalendarWeek, faStar, faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
 import useAuth from '../../../hooks/useAuth';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 const TourDetailsSummery = (props) => {
     const {user} = useAuth();
@@ -20,7 +21,13 @@ const TourDetailsSummery = (props) => {
         .then(res => res.json())
         .then(result => {
             if(result.insertedId){
-                alert('Order successfully');
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Successfully Submitted',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
                 reset();
             }
         })

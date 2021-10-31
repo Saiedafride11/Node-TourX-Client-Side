@@ -59,7 +59,7 @@ const MyOrder = () => {
                                     <td>{order.email}</td>
                                     <td>{order.title}</td>
                                     <td>{order.date}</td>
-                                    <td className="text-success">{order.status}</td>
+                                    <td style={{color: '#ff7f47'}}>{order.status}</td>
                                     <td>
                                         <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}><FontAwesomeIcon icon={faTrashAlt} /></button>
                                     </td>

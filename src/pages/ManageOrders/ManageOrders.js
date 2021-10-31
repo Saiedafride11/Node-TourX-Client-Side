@@ -1,8 +1,11 @@
 import React from 'react';
+import './ManageOrders.css';
 import { Table } from 'react-bootstrap';
 import useOrder from '../../hooks/useOrder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 
 const ManageOrders = () => {
     const [orders, setOrders] = useOrder();
@@ -43,7 +46,16 @@ const ManageOrders = () => {
         .then(res => res.json())
         .then(data => {
             if(data.modifiedCount > 0){
-                alert("Order Accepted");
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Order Approve Success',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1200)
             }
         })
     }
@@ -76,7 +88,7 @@ const ManageOrders = () => {
                                     <td>{order.email}</td>
                                     <td>{order.title}</td>
                                     <td>{order.date}</td>
-                                    <td className="text-success">{order.status}</td>
+                                    <td style={{color: '#ff7f47'}}>{order.status}</td>
                                     <td>
                                         <button onClick={() => handleUpdateStatus(order._id)} className="btn btn-success">Approve</button>
                                     </td>
