@@ -8,6 +8,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useOrder();
     document.title = 'Manage Order';
     
+    // Delete
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to delete?')
         if(proceed){
@@ -24,6 +25,27 @@ const ManageOrders = () => {
                 }
             })
             }
+    }
+
+    // Update 
+    const updateInfo = {
+        status: 'Approve',
+    }
+    const handleUpdateStatus = id => {
+        const url = `https://cryptic-mountain-31100.herokuapp.com/orders/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateInfo)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.modifiedCount > 0){
+                alert("Order Accepted");
+            }
+        })
     }
 
  
@@ -54,12 +76,12 @@ const ManageOrders = () => {
                                     <td>{order.email}</td>
                                     <td>{order.title}</td>
                                     <td>{order.date}</td>
-                                    <td style={{color: '#ff7f47'}}>Pending</td>
+                                    <td className="text-success">{order.status}</td>
                                     <td>
-                                        <button className="btn btn-success">Approve</button>
+                                        <button onClick={() => handleUpdateStatus(order._id)} className="btn btn-success">Approve</button>
                                     </td>
                                     <td>
-                                        <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}><FontAwesomeIcon icon={faTrashAlt} /></button>
+                                        <button onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}><FontAwesomeIcon icon={faTrashAlt} /></button>
                                     </td>
                                 </tr>
                             </tbody>

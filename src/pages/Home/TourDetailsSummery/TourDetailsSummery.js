@@ -11,6 +11,7 @@ const TourDetailsSummery = (props) => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
+            data.status = "Pending"
         fetch('https://cryptic-mountain-31100.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
