@@ -46,16 +46,16 @@ const ManageOrders = () => {
         .then(res => res.json())
         .then(data => {
             if(data.modifiedCount > 0){
+                const remaining = orders.filter(order => order._id === id)[0];
+                remaining.status = "Approve";
+                setOrders([...orders]);
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Order Approve Success',
+                    title: 'Order Approved Successfully',
                     showConfirmButton: false,
-                    timer: 1500
-                })
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1200)
+                    timer: 2000
+                  })
             }
         })
     }
