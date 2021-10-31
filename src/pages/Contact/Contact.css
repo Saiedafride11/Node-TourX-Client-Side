@@ -11,6 +11,7 @@
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
 @media only screen and (min-width: 280px) and (max-width:767px) {
     .contact button{
         width:75% !important;

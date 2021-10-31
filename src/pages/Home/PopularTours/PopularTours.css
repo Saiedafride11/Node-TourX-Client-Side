@@ -9,6 +9,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media only screen and (min-width: 280px) and (max-width:767px) {
     .popular-tour-container{
         display: grid;

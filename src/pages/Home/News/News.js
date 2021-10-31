@@ -27,7 +27,7 @@ const News = () => {
     return (
         <div className="py-5">
             <div className="container">
-            <h2 className="pb-3 text-center" style={{color: '#ff7f47'}}>Latest News & Articles</h2>
+                <h2 className="pb-3 text-center" style={{color: '#ff7f47'}}>Latest News & Articles</h2>
                 <div className="news-container">
                     {   
                         news?.length === 0 ?

@@ -1,7 +1,7 @@
 import React from 'react';
 import './TourDetailsSummery.css';
 import { useForm } from "react-hook-form";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faCalendarWeek, faStar, faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons'
 import useAuth from '../../../hooks/useAuth';
 
@@ -9,6 +9,7 @@ const TourDetailsSummery = (props) => {
     const {user} = useAuth();
     const {img, title, price, person, day, ratting, location} = props.tour;
     const { register, handleSubmit, reset } = useForm();
+
     const onSubmit = data => {
         fetch('https://cryptic-mountain-31100.herokuapp.com/orders', {
             method: 'POST',

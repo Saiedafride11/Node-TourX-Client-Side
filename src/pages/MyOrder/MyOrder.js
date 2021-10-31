@@ -36,7 +36,7 @@ const MyOrder = () => {
             <div className="mx-auto">
                 {
                     myOrders?.length === 0 ?
-                    <h2 style={{color: '#ff7f47'}}>Loading...</h2>
+                    <h2 style={{textAlign:"center", color: '#ff7f47'}}>No Show Any Order</h2>
                     :
                     <Table hover responsive="sm" style={{border: '1px solid #ff7f47'}}>
                         <thead>

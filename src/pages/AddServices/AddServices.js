@@ -22,7 +22,7 @@ const AddServices = () => {
     };
     return (
         <div className="container py-5">
-                <h2 className="py-3 text-center" style={{color: '#ff7f47'}}>Add Services</h2>
+                <h2 className="py-3 text-center" style={{color: '#ff7f47'}}>Add New Tourist Place</h2>
             <div className="add-services">
                     <form onSubmit={handleSubmit(onSubmit)} className="text-center">
                         <input placeholder="Please Type Title" {...register("title")} required/>

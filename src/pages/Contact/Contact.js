@@ -9,12 +9,12 @@ const Contact = () => {
                     <h2 className="text-center py-1" style={{color: '#ff7f47'}}>Contact Us</h2>
                     <form className="row g-3 p-5">
                         <div className="col-md-6">
-                        <label htmlFor="fName" className="form-label">First Name</label>
-                        <input type="text" placeholder="First Name..." className="form-control" id="fName"/>
+                            <label htmlFor="fName" className="form-label">First Name</label>
+                            <input type="text" placeholder="First Name..." className="form-control" id="fName"/>
                         </div>
                         <div className="col-md-6">
-                        <label htmlFor="lName" className="form-label">Last Name</label>
-                        <input type="text" placeholder="Last Name..." className="form-control" id="lName"/>
+                            <label htmlFor="lName" className="form-label">Last Name</label>
+                            <input type="text" placeholder="Last Name..." className="form-control" id="lName"/>
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="email" className="form-label">Email</label>
@@ -25,12 +25,12 @@ const Contact = () => {
                             <input type="text" placeholder="Phone..." className="form-control" id="phone"/>
                         </div>
                         <div className="col-12">
-                        <textarea className="w-100 p-2" style={{height:'100px'}} placeholder="Message...">
+                            <textarea className="w-100 p-2" style={{height:'100px'}} placeholder="Message...">
 
-                        </textarea>
+                            </textarea>
                         </div>
                         <div className="col-12">
-                        <button type="submit" className="btn w-25 text-white"  style={{backgroundColor: '#ff7f47'}}>Send Message</button>
+                            <button type="submit" className="btn w-25 text-white"  style={{backgroundColor: '#ff7f47'}}>Send Message</button>
                         </div>
                     </form>
 
