@@ -55,7 +55,7 @@ const ManageOrders = () => {
                     title: 'Order Approved Successfully',
                     showConfirmButton: false,
                     timer: 2000
-                  })
+                })
             }
         })
     }
@@ -88,7 +88,7 @@ const ManageOrders = () => {
                                     <td>{order.email}</td>
                                     <td>{order.title}</td>
                                     <td>{order.date}</td>
-                                    <td style={{color: '#ff7f47'}}>{order.status}</td>
+                                    <td style={{ color: order.status === "Pending" ? '#dc3545' : '#198754' }}>{order.status}</td>
                                     <td>
                                         <button onClick={() => handleUpdateStatus(order._id)} className="btn btn-success">Approve</button>
                                     </td>
