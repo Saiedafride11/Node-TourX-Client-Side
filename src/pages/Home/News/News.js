@@ -1,6 +1,7 @@
 import React from 'react';
 import NewsSummery from '../NewsSummery/NewsSummery';
 import './News.css';
+import Fade from 'react-reveal/Fade';
 
 
 const News = () => {
@@ -27,15 +28,19 @@ const News = () => {
     return (
         <div className="py-5">
             <div className="container">
-                <h2 className="pb-3 text-center" style={{color: '#ff7f47'}}>Latest News & Articles</h2>
-                <div className="news-container">
-                    {   
-                        news?.length === 0 ?
-                        <h2 style={{textAlign: 'center', color: '#1976d2', marginTop: '50px'}}>Loading...</h2>
-                        :
-                        news?.map(blogNews => <NewsSummery news={blogNews} key={blogNews.id}></NewsSummery>)
-                    }
-                </div>
+                <Fade top>
+                    <h2 className="pb-3 text-center" style={{color: '#ff7f47'}}>Latest News & Articles</h2>
+                </Fade>
+                <Fade left>
+                    <div className="news-container">
+                        {   
+                            news?.length === 0 ?
+                            <h2 style={{textAlign: 'center', color: '#1976d2', marginTop: '50px'}}>Loading...</h2>
+                            :
+                            news?.map(blogNews => <NewsSummery news={blogNews} key={blogNews.id}></NewsSummery>)
+                        }
+                    </div>
+                </Fade>
             </div>
         </div>
     );
