@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Banner.css'
 
 const Banner = () => {
@@ -15,8 +16,10 @@ const Banner = () => {
                     <Carousel.Caption>
                         <h1>Amazing Tour <br/> In Indonesia</h1>
                         <h3>7 Days, 8 Night Tour</h3>
-                        <div className="banner-btn">
-                            <a href="/tours" className="btn-common">All Package</a>
+                        <div className="text-center mt-3">
+                            <Link to="/tours">
+                                <button className="btn w-25 text-white"  style={{backgroundColor: '#ff7f47'}}>All Package</button>
+                            </Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -30,8 +33,10 @@ const Banner = () => {
                     <Carousel.Caption>
                         <h1>Amazing Tour <br/> In Hampshire </h1>
                         <h3>7 Days, 8 Night Tour</h3>
-                        <div className="banner-btn">
-                            <a href="/tours" className="btn-common">All Package</a>
+                        <div className="text-center mt-3">
+                            <Link to="/tours">
+                                <button className="btn w-25 text-white"  style={{backgroundColor: '#ff7f47'}}>All Package</button>
+                            </Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -44,8 +49,10 @@ const Banner = () => {
                     <Carousel.Caption>
                         <h1>Amazing Tour <br/> In madagascar</h1>
                         <h3>7 Days, 8 Night Tour</h3>
-                        <div className="banner-btn">
-                            <a href="/tours" className="btn-common">All Package</a>
+                        <div className="text-center mt-3">
+                            <Link to="/tours">
+                                <button className="btn w-25 text-white"  style={{backgroundColor: '#ff7f47'}}>All Package</button>
+                            </Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
