@@ -1,6 +1,8 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import useOrder from '../../hooks/useOrder';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useOrder();
@@ -36,25 +38,28 @@ const ManageOrders = () => {
                         <thead>
                             <tr>
                                 <th>SL.</th>
-                                <th>Location</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Location</th>
                                 <th>Date</th>
                                 <th>Status</th>
-                                <th>Delete Order</th>
+                                <th> </th>
                             </tr>
                         </thead>
                         {
                             orders?.map((order, i) => <tbody key={order._id}>
                                 <tr>
                                     <td>{i}</td>
-                                    <td>{order.title}</td>
                                     <td style={{textTransform: 'capitalize'}}>{order.name}</td>
                                     <td>{order.email}</td>
+                                    <td>{order.title}</td>
                                     <td>{order.date}</td>
                                     <td style={{color: '#ff7f47'}}>Pending</td>
                                     <td>
-                                        <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}>Cancel</button>
+                                        <button className="btn btn-success">Approve</button>
+                                    </td>
+                                    <td>
+                                        <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}><FontAwesomeIcon icon={faTrashAlt} /></button>
                                     </td>
                                 </tr>
                             </tbody>

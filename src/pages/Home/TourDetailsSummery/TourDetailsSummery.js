@@ -51,7 +51,7 @@ const TourDetailsSummery = (props) => {
                         <input defaultValue={title} {...register("title")} style={{textTransform: "capitalize"}}required/>
                         <input defaultValue={user.displayName} {...register("name")} style={{textTransform: "capitalize"}}required/>
                         <input defaultValue={user.email} {...register("email")} readOnly/>
-                        <input placeholder="Please Type Your Number....." {...register("phone")} required/>
+                        <input placeholder="Please Type Your Number....." {...register("phone")} type="number" required/>
                         <select defaultValue="Tickets Type" {...register("ticket", { required: true, maxLength: 20 })}>
                             <option value="type">Please Select Tickets.....</option>
                             <option value="bus">Travel With Bus</option>

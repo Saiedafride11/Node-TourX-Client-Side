@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import useOrder from '../../hooks/useOrder';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const MyOrder = () => {
     const [orders, setOrders] = useOrder();
@@ -42,23 +44,24 @@ const MyOrder = () => {
                         <thead>
                             <tr>
                                 <th>SL.</th>
-                                <th>Location</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Location</th>
                                 <th>Date</th>
-                                <th>Delete Order</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         {
                             myOrders?.map((order, i) => <tbody key={order._id}>
                                 <tr>
                                     <td>{i}</td>
-                                    <td>{order.title}</td>
                                     <td style={{textTransform: 'capitalize'}}>{order.name}</td>
                                     <td>{order.email}</td>
+                                    <td>{order.title}</td>
                                     <td>{order.date}</td>
+                                    <td className="text-success">Approve</td>
                                     <td>
-                                        <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}>Cancel</button>
+                                        <button  onClick={() => handleDeleteOrder(order._id)} className="btn text-white" style={{backgroundColor: '#ff7f47'}}><FontAwesomeIcon icon={faTrashAlt} /></button>
                                     </td>
                                 </tr>
                             </tbody>
